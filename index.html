@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Chromation makes compact broadband spectroscopy practical for product integration.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chromation | Compact broadband spectroscopy">
+    <meta property="og:description" content="Integrated spectral sensing for product integration.">
+    <meta property="og:url" content="https://chromation.netlify.app/">
+    <meta property="og:image" content="https://chromation.netlify.app/assets/chromation-social-preview.png?v=2">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Chromation | Compact broadband spectroscopy</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23ee1d43'/%3E%3Cstop offset='.28' stop-color='%23f5b52d'/%3E%3Cstop offset='.55' stop-color='%237b20d8'/%3E%3Cstop offset='1' stop-color='%2316d6a9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M51 15A25 25 0 1 0 52 47l-9-8a14 14 0 1 1 0-14z'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .brand img { width: 280px; }
+      .site-header { position: sticky; top: 0; z-index: 20; }
+      main section[id] { scroll-margin-top: 5rem; }
+      .hero { border-image: linear-gradient(90deg, #19d99d 0%, #06b8df 24%, #5044db 47%, #c52acb 70%, #f03945 100%) 1; }
+      h1 { font-size: clamp(2.5rem, 3.8vw, 3.8rem); }
+      h2 { font-size: clamp(1.9rem, 2.7vw, 2.9rem); }
+      h1, h2 { letter-spacing: -.035em; }
+      h3 { letter-spacing: -.03em; }
+      footer .brand img { width: 180px; }
+      footer { border-top: 0; background: #000; }
+      @media (max-width: 760px) { .brand img { width: 205px; } }
+      .hero { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(260px, .65fr); column-gap: 5rem; align-items: center; }
+      .hero { min-height: 500px; padding-top: 2.5rem; }
+      .hero-copy { grid-column: 1; }
+      .hero-specs { grid-column: 2; align-self: end; padding: 1.5rem 0 1.5rem 1.75rem; border-left: 1px solid #30323a; }
+      .spec-label { margin: 0 0 1.25rem; color: #a7afbf; font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+      .hero-opportunity { padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #30323a; }
+      .hero-opportunity p:last-child { margin: 0; color: #d2d7e4; font-size: 1.05rem; line-height: 1.5; }
+      .hero-opportunity .spec-label { color: #f2b84b; }
+      .hero-opportunity + .spec-label { color: #69a9ff; }
+      .lede strong { display: block; margin-bottom: .65rem; color: #fff; font-size: 1.2em; line-height: 1.15; }
+      .hero-facts { display: grid; grid-template-columns: 1fr; gap: 1.4rem; margin: 0; }
+      @media (max-width: 760px) { .hero { display: block; } .hero-specs { margin-top: 3rem; padding: 1.5rem 0 0; border-left: 0; border-top: 1px solid #30323a; } }
+      .solution { max-width: 1280px; margin: 0 auto; padding: 7rem 2rem; }
+      .solution-heading { max-width: 58rem; }
+      .solution-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 3.5rem; align-items: center; margin-top: 3.5rem; }
+      .solution-figure { margin: 0; }
+      .solution-figure img { display: block; width: 100%; height: 430px; object-fit: contain; object-position: center; background: #fff; }
+      .solution-figure figcaption { margin-top: .9rem; color: var(--muted); font-size: .95rem; }
+      .solution-details { padding: 2.25rem; border: 1px solid var(--line); background: #fff; }
+      .solution-details h3 { color: var(--blue); font-size: clamp(1.8rem, 2.4vw, 2.7rem); }
+      .solution-details dl { margin: 2.25rem 0 0; }
+      .solution-details div + div { margin-top: 1.65rem; }
+      .solution-details dt { font-size: 1.35rem; font-weight: 800; letter-spacing: -.04em; }
+      .solution-details dd { margin: .35rem 0 0; color: var(--muted); font-size: 1.05rem; }
+      .solution-figure img { height: 280px; background: transparent; mix-blend-mode: multiply; }
+      .solution-figure figcaption { text-align: center; }
+      .solution { padding-top: 5rem; padding-bottom: 5rem; }
+      .solution { background: #fff; box-shadow: 0 0 0 100vmax #fff; clip-path: inset(0 -100vmax); }
+      .solution-grid { margin-top: 2.25rem; align-items: start; }
+      .solution-details { padding: 1.75rem 2rem; }
+      .solution-grid { grid-template-columns: .8fr 1.2fr; gap: 4rem; }
+      .solution-figure img { height: 300px; background: #fff; mix-blend-mode: normal; }
+      .solution-details { padding: 0; border: 0; background: transparent; }
+      .solution-details h3 { display: none; }
+      .anatomy-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+      .anatomy-list li { display: grid; grid-template-columns: 3.25rem 1fr; gap: .9rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+      .anatomy-list .number { color: var(--blue); font-size: .8rem; font-weight: 800; letter-spacing: .08em; }
+      .anatomy-list h3 { display: block; margin: 0 0 .45rem; color: var(--ink); font-size: 1.45rem; }
+      .anatomy-list p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+      @media (max-width: 760px) { .solution-grid { grid-template-columns: 1fr; gap: 2rem; } .solution-figure img { height: 280px; } }
+      @media (max-width: 760px) { .solution { padding: 5rem 1.25rem; } .solution-grid { grid-template-columns: 1fr; gap: 2rem; margin-top: 2.5rem; } .solution-figure img { height: 300px; } .solution-details { padding: 1.5rem; } }
+      .innovation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3.5rem; }
+      .innovation-figure { margin: 0; background: #fff; }
+      .innovation-figure img { display: block; width: 100%; height: auto; }
+      .innovation-list { display: grid; gap: 1.25rem; }
+      .innovation-card { padding: 1.8rem; border: 1px solid var(--line); background: #fff; }
+      .innovation-card .number { display: inline-grid; place-items: center; width: 2.25rem; height: 2.25rem; margin-bottom: 1.1rem; border-radius: 50%; background: var(--blue); color: #fff; font-size: .9rem; font-weight: 800; }
+      .innovation-card h3 { margin-bottom: .55rem; font-size: 1.6rem; }
+      .innovation-card p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+      .innovation-grid { grid-template-columns: 1.2fr .8fr; }
+      .innovation-list { order: 1; display: block; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+      .innovation-figure { order: 2; background: transparent; }
+      .innovation-figure img { background: transparent; mix-blend-mode: multiply; }
+      .innovation-list li { display: grid; grid-template-columns: 3.25rem 1fr; gap: .9rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+      .innovation-list .number { display: block; width: auto; height: auto; margin: 0; border-radius: 0; background: transparent; color: var(--blue); font-size: .8rem; letter-spacing: .08em; }
+      .innovation-list h3 { margin: 0 0 .45rem; color: var(--ink); font-size: 1.45rem; }
+      .innovation-list p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+      .platform.section { padding-top: 5.25rem; padding-bottom: 5.25rem; }
+      .platform.section .innovation-grid { margin-top: 1.75rem; }
+      .difference { padding-top: 5.5rem; padding-bottom: 5.5rem; }
+      .difference { border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-image: linear-gradient(90deg, #19d99d 0%, #06b8df 24%, #5044db 47%, #c52acb 70%, #f03945 100%) 1; }
+      .pathway { background: var(--paper); }
+      .pathway ol { display: block; max-width: 62rem; margin: 2.5rem 0 0; border-top: 1px solid var(--line); }
+      .pathway li { display: grid; grid-template-columns: 3.25rem 1fr; gap: .9rem; padding: 1.35rem 0; border-top: 0; border-bottom: 1px solid var(--line); }
+      .pathway b { margin: 0; color: var(--blue); font-size: .8rem; letter-spacing: .08em; }
+      .pathway li div { max-width: 42rem; }
+      .pathway li h3 { margin: 0 0 .45rem; color: var(--ink); font-size: 1.45rem; }
+      .pathway li p { margin: 0; color: var(--muted); font-size: 1.05rem; font-weight: 400; }
+      .pathway li span { font-size: inherit; font-weight: inherit; }
+      .pathway-body { display: grid; grid-template-columns: 1.1fr .9fr; gap: 4rem; align-items: center; margin-top: 2.5rem; }
+      .pathway-body ol { max-width: none; margin: 0; }
+      .pathway-figure { margin: 0; }
+      .pathway-figure img { display: block; width: 100%; height: auto; }
+      .pathway-figure figcaption { margin-top: .85rem; color: var(--muted); font-size: .9rem; text-align: center; }
+      .about { background: #fff; box-shadow: 0 0 0 100vmax #fff; clip-path: inset(0 -100vmax); }
+      .about-heading { display: grid; grid-template-columns: 1.05fr .95fr; gap: 4rem; align-items: start; }
+      .about-intro { max-width: 27rem; }
+      .about-intro p:last-child { margin: 1.15rem 0 0; color: var(--muted); font-size: 1.1rem; line-height: 1.55; }
+      .about-heading h2 { max-width: 17ch; }
+      .about-proof { margin: 3rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+      .about-proof li { display: grid; grid-template-columns: 3.25rem 1fr; gap: .9rem; padding: 1.35rem 0; border-bottom: 1px solid var(--line); }
+      .about-proof b { color: var(--blue); font-size: .8rem; letter-spacing: .08em; }
+      .about-proof h3 { margin: 0 0 .35rem; color: var(--ink); font-size: 1.45rem; }
+      .about-proof p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+      .contact-inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: 4rem; align-items: start; }
+      .contact { position: relative; overflow: hidden; background: #000; }
+      .contact { border-top: 6px solid transparent; border-image: linear-gradient(90deg, #19d99d 0%, #06b8df 24%, #5044db 47%, #c52acb 70%, #f03945 100%) 1; }
+      .contact-inner { position: relative; z-index: 1; }
+      .contact-details { max-width: 32rem; padding-top: 2.25rem; }
+      .contact-details p { margin-bottom: 1.5rem; }
+      .contact-mark { position: absolute; right: max(2rem, calc((100vw - 1200px)/2 + 2rem)); top: 50%; width: 415px; height: 420px; transform: translateY(-50%); background: url('assets/chromation-logo-black.png') no-repeat -290px -380px / 3560px auto; opacity: .30; pointer-events: none; }
+      .applications { background: #fff; box-shadow: 0 0 0 100vmax #fff; clip-path: inset(0 -100vmax); }
+      .applications-heading { display: grid; grid-template-columns: .75fr 1.25fr; gap: 4rem; align-items: start; }
+      .applications-heading h2 { max-width: 23ch; }
+      .application-grid article { min-height: 0; padding: 1.35rem 1.5rem; }
+      @media (max-width: 760px) { .applications-heading { grid-template-columns: 1fr; gap: 1.5rem; } }
+      @media (max-width: 760px) { .about-heading { grid-template-columns: 1fr; gap: 1.5rem; } .about-proof { margin-top: 2rem; } }
+      @media (max-width: 760px) { .contact-inner { grid-template-columns: 1fr; gap: 0; } .contact-details { padding-top: 0; } .contact-mark { display: block; right: 1rem; bottom: 1.5rem; top: auto; width: 230px; height: 230px; transform: none; background-size: 2150px auto; background-position: -175px -238px; opacity: .24; } }
+      @media (max-width: 760px) { .pathway-body { grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; } }
+      @media (max-width: 760px) { .application-grid { margin-top: 2.25rem; border-left: 0; } .application-grid article { min-height: 0; padding: 1.35rem 0; background: transparent; border-right: 0; } .application-grid article h3 { margin-bottom: .45rem; font-size: 1.35rem; } .application-grid article p { margin: 0; font-size: 1rem; } }
+      @media (max-width: 760px) { .innovation-grid { grid-template-columns: 1fr; gap: 2rem; } }
+      @media (max-width: 760px) { .innovation-grid { grid-template-columns: 1fr; gap: 2rem; margin-top: 2.5rem; } .innovation-card { padding: 1.5rem; } }
+      .menu-toggle { display: none; }
+      @media (max-width: 760px) {
+        .site-header { position: sticky; }
+        .menu-toggle { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; padding: 0; border: 1px solid #4a4d55; border-radius: .25rem; background: transparent; color: #fff; cursor: pointer; }
+        .menu-toggle span, .menu-toggle::before, .menu-toggle::after { position: absolute; left: 50%; display: block; width: 1.2rem; height: 2px; border-radius: 2px; background: currentColor; content: ''; transform: translateX(-50%); }
+        .menu-toggle::before { top: .8rem; }
+        .menu-toggle span { top: calc(50% - 1px); }
+        .menu-toggle::after { bottom: .8rem; }
+        .site-header nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; padding: .75rem 1.25rem 1.25rem; background: var(--night); border-top: 1px solid #30323a; box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.22); }
+        .site-header.nav-open nav { display: flex; }
+        .site-header nav a { display: block; padding: .85rem 0; font-size: 1rem; border-bottom: 1px solid #30323a; }
+        .site-header nav a:last-child { border-bottom: 0; }
+        .site-header.nav-open .menu-toggle { background: #1d55f5; border-color: #1d55f5; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Chromation home"><img src="assets/chromation-logo-black.png" alt="Chromation"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation menu"><span aria-hidden="true"></span></button>
+      <nav id="site-navigation" aria-label="Main navigation"><a href="#platform">Platform</a><a href="#applications">Applications</a><a href="#process">Path to product</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+    </header>
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Integrated spectral sensing</p>
+          <h1>Broadband spectroscopy<br>in a tiny package.</h1>
+          <p class="lede"><strong>Make spectroscopy a product feature - not a lab instrument.</strong>Broadband spectral sensing for product integration - without external optics.</p>
+          <div class="actions"><a class="button" href="#contact">Discuss your use case</a><a class="text-link" href="#platform">Explore the platform <span aria-hidden="true">↓</span></a></div>
+        </div>
+        <aside class="hero-specs" aria-label="Platform at a glance">
+          <div class="hero-opportunity"><p class="spec-label">The opportunity</p><p>Bring broadband spectral insight to compact products, instruments, and sensing platforms.</p></div>
+          <p class="spec-label">Platform at a glance</p>
+          <dl class="hero-facts"><div><dt>Broad range</dt><dd>UV / VIS / NIR</dd></div><div><dt>Current package</dt><dd>10 × 5 × 3 mm</dd></div><div><dt>Architecture</dt><dd>Integrated optical bench</dd></div></dl>
+        </aside>
+      </section>
+      <section class="solution" id="platform">
+        <div class="solution-heading"><p class="eyebrow">The Chromation platform</p><h2>A compact spectrometer architecture designed for product integration.</h2></div>
+        <div class="solution-grid">
+          <figure class="solution-figure"><img src="assets/chromation-spectrometer-penny.png" alt="Chromation spectrometer on a penny for scale"><figcaption>10 × 5 × 3 mm package on a U.S. penny for scale.</figcaption></figure>
+          <div class="solution-details"><ol class="anatomy-list"><li><span class="number">01</span><div><h3>Spectral separation</h3><p>Photonic crystal scattering creates a wavelength-dependent response.</p></div></li><li><span class="number">02</span><div><h3>Monolithic optical bench</h3><p>Light management is integrated into a compact monolithic structure.</p></div></li><li><span class="number">03</span><div><h3>Detector interface</h3><p>Optical die and photodetector array fit into an SMT-ready package.</p></div></li></ol></div>
+        </div>
+      </section>
+      <section class="platform section">
+        <div class="section-heading"><p class="eyebrow">How it works</p><h2>Two innovations turn an integrated optical path into a spectrometer.</h2></div>
+        <div class="innovation-grid"><ol class="innovation-list"><li><span class="number">01</span><div><h3>Photonic crystal scattering</h3><p>Creates wavelength-dependent optical response in a compact volume.</p></div></li><li><span class="number">02</span><div><h3>Monolithic optical bench</h3><p>Integrates the entrance slit, apertures, mirrors, absorbers, and photonic crystal into a folded optical path on one wafer.</p></div></li></ol><figure class="innovation-figure"><img src="assets/chromation-optical-path.jpg" alt="Exploded view of the Chromation spectrometer, showing the integrated optical die, optical bench, and photodiode array"></figure></div>
+      </section>
+      <section class="difference section"><div><p class="eyebrow">Why it matters</p><h2>More signal.<br>Less integration burden.</h2></div><ul><li><strong>Integrated spectral optics</strong><span>The wavelength-separation path is integrated into the chip-scale architecture, reducing external alignment, optical assembly, and packaging complexity.</span></li><li><strong>Broad spectral response</strong><span>Single-unit coverage across ultraviolet, visible, and near-infrared wavelengths.</span></li><li><strong>Flexible platform</strong><span>The optical bench can be matched to different detectors, ranges, and application needs.</span></li><li><strong>Roadmap to smaller formats</strong><span>Without an imaging-based optical layout, the platform can be packaged in smaller formats.</span></li></ul></section>
+      <section class="applications section" id="applications"><div class="applications-heading"><p class="eyebrow">Target applications</p><h2>Built for the places where spectral information matters.</h2></div><div class="application-grid"><article><h3>Healthcare &amp; diagnostics</h3><p>Non-invasive monitoring, point-of-care measurement, and biological sample analysis.</p></article><article><h3>Industrial &amp; IoT</h3><p>Lighting control, process monitoring, and embedded instruments.</p></article><article><h3>Environmental &amp; safety</h3><p>Air and water sensing, pollution monitoring, and exposure detection.</p></article><article><h3>Authentication &amp; quality</h3><p>Food and oil signatures, material verification, and counterfeit detection.</p></article><article><h3>Agriculture &amp; plant health</h3><p>Crop management, plant health, and field sensing.</p></article><article><h3>Consumer &amp; wearable</h3><p>UV exposure, ambient light sensing, and personal-device integration.</p></article></div></section>
+      <section class="pathway section" id="process"><p class="eyebrow">From fit to product</p><h2>A practical path to feasibility.</h2><div class="pathway-body"><ol><li><b>01</b><div><h3>Use-case fit</h3><p>Define the spectral target, illumination, package constraints, and success criteria.</p></div></li><li><b>02</b><div><h3>Demo &amp; feasibility</h3><p>Evaluate a packaged demo system or component-level measurement.</p></div></li><li><b>03</b><div><h3>Integration design</h3><p>Map optical, electrical, mechanical, and software integration.</p></div></li><li><b>04</b><div><h3>Productization</h3><p>Work with ODM and manufacturing partners where needed.</p></div></li></ol><figure class="pathway-figure"><img src="assets/chromation-sdk-evaluation.jpg" alt="Chromation SDK connected for system-level evaluation"><figcaption>Chromation SDK used for system-level evaluation.</figcaption></figure></div></section>
+      <section class="about section" id="about"><div class="about-heading"><div class="about-intro"><p class="eyebrow">About Chromation</p><p>Chromation brings foundational spectral-sensing technology into compact, integration-ready products.</p></div><h2>Deep technology.<br>Practical outcomes.</h2></div><ol class="about-proof"><li><b>01</b><div><h3>Strong intellectual property</h3><p>Built on differentiated technology for integrated broadband spectral sensing.</p></div></li><li><b>02</b><div><h3>Columbia University spinout</h3><p>Rooted in advanced research and developed to solve real product-integration challenges.</p></div></li><li><b>03</b><div><h3>Three years of product development</h3><p>Focused on turning the platform into a dependable path to product integration.</p></div></li><li><b>04</b><div><h3>Experienced team</h3><p>Combining expertise in photonics, spectroscopy, product development, and commercialization.</p></div></li></ol></section>
+      <section class="contact" id="contact"><div class="contact-mark" aria-hidden="true"></div><div class="contact-inner"><div><p class="eyebrow">Start with your use case</p><h2>Let’s discuss your spectral sensing challenge.</h2></div><div class="contact-details"><p>Chromation can help evaluate whether compact broadband spectroscopy fits your product, instrument, or sensing platform.</p><a class="button" href="mailto:info@chromationspec.com">info@chromationspec.com</a><p class="location">Bronx, New York</p></div></div></section>
+    </main>
+    <footer><a class="brand" href="#" aria-label="Chromation home"><img src="assets/chromation-logo-black.png" alt="Chromation"></a><p>© <span id="year"></span> Chromation. All rights reserved.</p></footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const menuToggle = document.querySelector('.menu-toggle');
+      const header = document.querySelector('.site-header');
+      const navigation = document.getElementById('site-navigation');
+      menuToggle.addEventListener('click', () => {
+        const isOpen = header.classList.toggle('nav-open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      });
+      navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        header.classList.remove('nav-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+      }));
+    </script>
+  </body>
+</html>
